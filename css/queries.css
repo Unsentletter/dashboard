@@ -1,0 +1,37 @@
+@media only screen and (max-width: 1060px) {
+  .box-row-left {
+    width: 45vw;
+    padding: 5px;
+  }
+
+  .box-row-right {
+    width: 45vw;
+    padding: 5px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .box-row-left {
+    float: none;
+    width: 100%;
+  }
+
+  .box-row-right {
+    float: none;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .box-left .content {
+    height: 300px;
+  }
+
+  .box-right .content {
+    height: 300px;
+  }
+
+  .inner-box .content {
+    height: 300px;
+  }
+}

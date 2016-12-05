@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/queries.css" />
+    <title>Gumtree wireframe</title>
+  </head>
+  <body>
+    <section>
+      <div class="dropdown">
+        <button onclick="dropdown()" class="dropbtn1">Dropdown1</button>
+        <div id="myDropdown1" class="dropdown-content1">
+          <a href="#">Development</a>
+          <a href="#">QA</a>
+          <a href="#">Production</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown2</button>
+        <div id="myDropdown2" class="dropdown-content">
+          <a href="#">Development</a>
+          <a href="#">QA2</a>
+          <a href="#">QA6</a>
+          <a href="#">QA9</a>
+          <a href="#">Production</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+        <div class="box-row-left">
+          <div class="box-left">
+            <div class="title">
+              IMPORT LOG
+            </div>
+            <div class="content">
+              <ul>
+                <li>Text</li>
+                <li>Text</li>
+                <li>Text</li>
+                <li>Text</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="box-row-right">
+          <div class="box-right">
+            <div class="title">
+              EXPORT LOG
+            </div>
+            <div class="content">
+              <ul>
+                <li>Text</li>
+                <li>Text</li>
+                <li>Text</li>
+                <li>Text</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section>
+      <div class="box-row-left">
+        <div class="box-left">
+          <div class="title">
+            EXPORTED FILES
+          </div>
+          <div class="content">
+            <ul>
+              <li><a href="#">Text</a></li>
+              <li><a href="#">Text</a></li>
+              <li><a href="#">Text</a></li>
+              <li><a href="#">Text</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="box-row-right">
+        <div class="box-right">
+          <div class="title">
+            DIFF FILES
+          </div>
+          <div class="content">
+            <ul>
+              <li><a href="#">Text</a></li>
+              <li><a href="#">Text</a></li>
+              <li><a href="#">Text</a></li>
+              <li><a href="#">Text</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="long-box-row">
+        <div class="long-box">
+          <div class="title">
+            HISTORY LOG
+          </div>
+          <div class="content">
+            <div class="inner-box">
+              <div class="inner-title">
+                Import on 2016//07/01
+              </div>
+              <div class="inner-content">
+                <ul>
+                  <li>Text</li>
+                  <li>Text</li>
+                  <li>Text</li>
+                  <li>Text</li>
+                </ul>
+              </div>
+              <div class="inner-title">
+                text
+              </div>
+              <div class="inner-content">
+                <ul>
+                  <li>Text</li>
+                  <li>Text</li>
+                  <li>Text</li>
+                  <li>Text</li>
+                </ul>
+              </div>
+              <div class="inner-title">
+                text
+              </div>
+              <div class="inner-content">
+                <ul>
+                  <li>Text</li>
+                  <li>Text</li>
+                  <li>Text</li>
+                  <li>Text</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // MAIN BOX ANIMATION
+      $(".title").click(function() {
+        $(this).siblings().animate({
+          opacity: 1,
+          left: "+=50",
+          height: "toggle"
+        }, 500, function() {
+          // Animation complete.
+        });
+      });
+      // SUB BOX ANIMATION
+      $(".inner-title").click(function() {
+        $(this).siblings().animate({
+          opacity: 1,
+          left: "+=50",
+          height: "toggle"
+        }, 500, function() {
+          // Animation complete.
+        });
+      });
+    });
+
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+
+    function dropdown () {
+      var dropdown = document.getElementById("myDropdown1");
+      var dropdownData = document.getElementsByClassName("dropdown-content1");
+
+      function myFunction() {
+          dropdown.classList.toggle("show");
+      }
+      // Close the dropdown menu if the user clicks outside of it
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn1')) {
+          var dropdowns = dropdownData
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+    }
+  </script>
+  </body>
+</html>
