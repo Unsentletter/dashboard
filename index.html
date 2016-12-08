@@ -20,20 +20,28 @@
         </div>
         <div class="flex">
           <div class="box">
-            <select>
-              <option>Development</option>
-              <option>QA</option>
-              <option>Production</option>
-            </select>
+            <div class="menu-above">
+              <div class="menu">
+                <p>Test Environment</p>
+                <select>
+                  <option>Development</option>
+                  <option>QA</option>
+                  <option>Production</option>
+                </select>
+              </div>
 
-            <select>
-              <option>Development</option>
-              <option>QA2</option>
-              <option>QA6</option>
-              <option>QA9</option>
-              <option>Production</option>
-            </select>
-            <a class="btn" href="#">Import</a>
+              <div class="menu">
+                <p>Development Environment</p>
+                <select>
+                  <option>Development</option>
+                  <option>QA2</option>
+                  <option>QA6</option>
+                  <option>QA9</option>
+                  <option>Production</option>
+                </select>
+              </div>
+              <a class="btn" href="#">Import</a>
+            </div>
             <div class="title">
               <div class="collapse-icon">
                 -
@@ -54,20 +62,28 @@
           </div>
 
           <div class="box">
-            <select>
-              <option>Development</option>
-              <option>QA</option>
-              <option>Production</option>
-            </select>
+            <div class="menu-above">
+              <div class="menu">
+                <p>Test Environment</p>
+                <select>
+                  <option>Development</option>
+                  <option>QA</option>
+                  <option>Production</option>
+                </select>
+              </div>
 
-            <select>
-              <option>Development</option>
-              <option>QA2</option>
-              <option>QA6</option>
-              <option>QA9</option>
-              <option>Production</option>
-            </select>
-            <a class="btn" href="#">Export</a>
+              <div class="menu">
+                <p>Development Environment</p>
+                <select>
+                  <option>Development</option>
+                  <option>QA2</option>
+                  <option>QA6</option>
+                  <option>QA9</option>
+                  <option>Production</option>
+                </select>
+              </div>
+              <a class="btn" href="#">Export</a>
+            </div>
             <div class="title">
               <div class="collapse-icon">
                 -
@@ -138,8 +154,30 @@
             </div>
             <div class="content">
               <div class="inner-box">
+                  <div class="inner-title">
+                    <div class="collapse-icon">
+                      -
+                    </div>
+                    <div class="title-text">
+                      Import on 2016//07/01
+                    </div>
+                  </div>
+                  <div class="inner-content">
+                    <ul>
+                      <li>Text</li>
+                      <li>Text</li>
+                      <li>Text</li>
+                      <li>Text</li>
+                    </ul>
+                  </div>
+
                 <div class="inner-title">
-                  Import on 2016//07/01
+                  <div class="collapse-icon">
+                    -
+                  </div>
+                  <div class="title-text">
+                    Import on 2016//07/01
+                  </div>
                 </div>
                 <div class="inner-content">
                   <ul>
@@ -150,18 +188,12 @@
                   </ul>
                 </div>
                 <div class="inner-title">
-                  text
-                </div>
-                <div class="inner-content">
-                  <ul>
-                    <li>Text</li>
-                    <li>Text</li>
-                    <li>Text</li>
-                    <li>Text</li>
-                  </ul>
-                </div>
-                <div class="inner-title">
-                  text
+                  <div class="collapse-icon">
+                    -
+                  </div>
+                  <div class="title-text">
+                    Import on 2016//07/01
+                  </div>
                 </div>
                 <div class="inner-content">
                   <ul>
@@ -178,9 +210,9 @@
 
       </div>
 
-      <a class="btn" href="#">Clear All Logs</a>
+      <a class="btn1" href="#">Clear All Logs</a>
 
-      <a class="btn" href="#">Clear History</a>
+      <a class="btn2" href="#">Clear History</a>
       <footer>
 
       </footer>
@@ -197,8 +229,8 @@
         });
       });
       // SUB BOX ANIMATION
-      $(".inner-title").on('click', function() {
-        $(this).siblings().animate({
+      $(".collapse-icon").on('click', function() {
+        $(this).parent().parent().find('.inner-content').animate({
           opacity: 1,
           left: "+=50",
           height: "toggle"
@@ -209,7 +241,17 @@
 
       // BUTTON REPLACING TEXT IN DIV
       $(".btn").on('click', function() {
-        $(this).parent().find(".box-list").prepend('<li>added text</li><li>more added text</li>')
+        $(this).parent().parent().find(".box-list").prepend('<li>added text</li><li>more added text</li>')
+      });
+
+      // CLEAR LOGS
+      $(".btn1").on('click', function() {
+        $(this).parent().parent().parent().find(".box-list").empty()
+      });
+
+      // CLEAR HISTORY
+      $(".btn2").on('click', function() {
+        $(this).parent().parent().find(".inner-box").empty()
       });
     });
 
